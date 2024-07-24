@@ -1,4 +1,5 @@
-import { Component, EnvironmentInjector } from '@angular/core';
+import { Component, EnvironmentInjector, Input } from '@angular/core';
+import { product } from '../productType/productType';
 
 
 
@@ -11,6 +12,7 @@ import { Component, EnvironmentInjector } from '@angular/core';
 
 export class ProductListComponent {
 
+  selectedProduct : product;
   products = [
     {
       id: 1,
@@ -541,6 +543,13 @@ export class ProductListComponent {
   lengthOfArray: number= this.products.length;
   allInStock:number = this.products.filter(p=> p.is_in_inventory == true).length
   allOutStock:number = this.products.filter(p=> p.is_in_inventory == false).length
+  onChangeFilterRadioButtonParent: string = 'All';
+  onFilterChange(value: string){
+    this.onChangeFilterRadioButtonParent=value;
+    // console.log("onChnage of productList working " + this.onChangeFilterRadioButtonParent)
 
-  
+  }
+
+  @Input()
+  searchText :string ='';
 }

@@ -1,0 +1,16 @@
+export class product{
+    id: number;
+    name: string; 
+    description: string; 
+    brand: string; 
+    gender: string; 
+    category: string;
+    size: number[]; 
+    color: string[];
+    price: number; 
+    discountprice?: any; 
+    is_in_inventory: boolean;
+    items_left: number; 
+    imageURL: string;
+    slug : string;
+}

@@ -1,4 +1,7 @@
 <app-top-header></app-top-header>
 <app-header></app-header>
-<app-product-list></app-product-list>
+<app-search (searchedThroughProducts)="searchingThroughProducts($event)"></app-search>
+<app-product-list [searchText]="searchedItems" #productListComponent></app-product-list>
+
+<app-product-details *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-details>
 

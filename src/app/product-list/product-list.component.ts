@@ -1,5 +1,6 @@
-import { Component, EnvironmentInjector, Input } from '@angular/core';
+import { Component, EnvironmentInjector, Input, OnInit, inject } from '@angular/core';
 import { product } from '../productType/productType';
+import { SearchService } from '../search.service';
 
 
 
@@ -10,10 +11,10 @@ import { product } from '../productType/productType';
 })
 
 
-export class ProductListComponent {
+export class ProductListComponent implements OnInit{
 
   selectedProduct : product;
-  products = [
+  products : product[] = [
     {
       id: 1,
       name: "Nike React Infinity Run Flyknit",
@@ -552,4 +553,15 @@ export class ProductListComponent {
 
   @Input()
   searchText :string ='';
+
+
+  searchService:SearchService= inject(SearchService) ;
+  
+
+  ngOnInit() {
+    this.searchService.searchItem.subscribe((value)=>{
+            this.searchText= value;
+            console.log(this.searchText);
+    });
+  }
 }

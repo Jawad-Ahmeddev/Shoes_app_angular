@@ -1,5 +1,6 @@
 <div class="ekart--search--product">
     <input class="ekart-search-product-input" #inputSearch>
-    <button class="btn btn-search"  (click)="searchButtonClicked()">Search</button>
+    <!-- (click)="searchButtonClicked()" -->
+    <button class="btn btn-search"  (click)="onSearchItem()">Search</button>
 </div>
 <div class="ekart-search-result-for" *ngIf="searchValue !='' "><p><strong>Search result for:</strong> {{searchValue}}</p></div>

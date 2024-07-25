@@ -3,7 +3,7 @@
         <div class="ekart--add--to--wishlist">
           <i class="fa fa-heart-o" aria-hidden="true"></i>
         </div>
-        <div class="ekart-on-sale-tag" *ngIf="product.discountprice">{{(100 -(product.discountprice/product.price*100)).toFixed(0)}}% OFF</div>
+        <div class="ekart-on-sale-tag" *ngIf="product.discountPrice">{{(100 -(product.discountPrice/product.price*100)).toFixed(0)}}% OFF</div>
       </div>
       <div class="ekart--product--image">
           <img [src]="product.imageURL" class="ekart--product--image">

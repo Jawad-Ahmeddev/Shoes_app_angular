@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product-list/product/product.component';
 import { FilterComponent } from './product-list/filter/filter.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductComponent,
     FilterComponent,
     ProductDetailsComponent,
+    HomeComponentComponent,
 
   ],
   imports: [

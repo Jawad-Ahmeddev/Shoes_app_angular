@@ -2,5 +2,5 @@
 <app-search (searchedThroughProducts)="searchingThroughProducts($event)"></app-search>
 <app-product-list [searchText]="searchedItems" #productListComponent onclick=""  ></app-product-list>
 
-<app-product-details  *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent" #prodDetails ></app-product-details>
+<app-product-details  *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"  ></app-product-details>
 

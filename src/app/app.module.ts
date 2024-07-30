@@ -18,7 +18,7 @@ import { ProductComponent } from './home-component/product-list/product/product.
 import { ProductListComponent } from './home-component/product-list/product-list.component';
 import { contactModule } from './contact/contact.module';
 import { spacebtwwordsPipe } from './spacebtwwords.Pipe';
-import { FallbackImagePipe } from './fallbackImage.pipe';
+import { ImageErrorDirective } from './ImageErrorDirective.directive';
 const routes: Routes= [
   {path: '', component: HomeComponentComponent},
   {path: 'contact', loadChildren: ()=>import ('./contact/contact.module').then ((mod)=>mod.contactModule)} ,
@@ -43,7 +43,7 @@ const routes: Routes= [
         FilterComponent,
         ProductListComponent,
         spacebtwwordsPipe,
-        FallbackImagePipe
+        ImageErrorDirective
 
 
   ],

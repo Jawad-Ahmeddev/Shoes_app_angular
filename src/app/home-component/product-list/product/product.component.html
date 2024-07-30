@@ -6,7 +6,7 @@
         <div class="ekart-on-sale-tag" *ngIf="product.discountPrice">{{((product.discountPrice/product.price))| percent : '2.0'}} OFF</div>
       </div>
       <div class="ekart--product--image">
-          <img [src]="product.imageURL | fallbackImage "  class="ekart--product--image"><img >
+          <img [src]="product.imageURL"  appImageError="assets/error-image.png" alt="Product Image" class="ekart--product--image"><img >
           <!-- [src]="product.imageURL" -->
       </div>
       <div class="ekart--add--to--price">  

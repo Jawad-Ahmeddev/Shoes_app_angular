@@ -1,7 +1,6 @@
 import { Component, EnvironmentInjector, Input, OnInit, inject } from '@angular/core';
 import { product } from '../productType/productType';
-import { SearchService } from '../search.service';
-
+import { SearchService } from 'src/app/search.service';
 
 
 @Component({
@@ -14,6 +13,7 @@ import { SearchService } from '../search.service';
 export class ProductListComponent implements OnInit{
 
   selectedProduct : product;
+  TurnDetailScreenToTrue: boolean = true;
   products : product[] = [
     {
       id: 1,

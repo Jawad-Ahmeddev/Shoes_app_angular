@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild, inject } from '@angular/core';
 import { ElementRef } from '@angular/core';
-import { SearchService } from '../search.service';
+import { SearchService } from '../../search.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

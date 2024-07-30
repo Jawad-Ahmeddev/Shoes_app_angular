@@ -3,15 +3,17 @@
         <div class="ekart--add--to--wishlist">
           <i class="fa fa-heart-o" aria-hidden="true"></i>
         </div>
-        <div class="ekart-on-sale-tag" *ngIf="product.discountPrice">{{(100 -(product.discountPrice/product.price*100)).toFixed(0)}}% OFF</div>
+        <div class="ekart-on-sale-tag" *ngIf="product.discountPrice">{{((product.discountPrice/product.price))| percent : '2.0'}} OFF</div>
       </div>
       <div class="ekart--product--image">
-          <img [src]="product.imageURL" class="ekart--product--image">
+          <img [src]="product.imageURL | fallbackImage "  class="ekart--product--image"><img >
+          <!-- [src]="product.imageURL" -->
       </div>
-      <div class="ekart--add--to--price">
-          {{product.price}}
+      <div class="ekart--add--to--price">  
+        <!-- | currency: 'PKR ':true: '3.0' -->
+           {{(product.discountPrice ? (product.discountPrice * 278.50 ): (product.price *  278.50))| currency: 'PKR ':true: '3.0'}}
       </div>
-      <div class="ekart--product--name">{{product.name}}</div>
+      <div class="ekart--product--name">{{product.name | Spaceing}}</div>
       <div class="ekart--product--category">{{product.gender}} . {{product.category}} . {{product.brand}}</div>
       <div class="ekart--product--available-colors">{{product.color.length}} Colors . Best Seller</div>
       <div class="ekart--product--in--stock" [ngStyle]="{fontWeight : 'bold', color: product.is_in_inventory ? 'green': 'red'}"> {{product.is_in_inventory? 'Available': 'Out Of Stock'}}</div>

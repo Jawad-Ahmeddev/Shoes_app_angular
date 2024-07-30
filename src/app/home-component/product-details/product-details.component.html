@@ -1,9 +1,9 @@
-<div class="ekart--product--details--info scroll">
+<div *ngIf="isVisible" class="ekart--product--details--info scroll">
     <div class="ekart-product-detail-close">
-        <i class="fa fa-times" aria-hidden="true"></i>
+        <button class="fa fa-times" aria-hidden="true" (click)="closePage()" ></button>
     </div>
     <div class="ekart-product-detail-image">
-        <img src={{Product.imageURL}} class="ekart-product-detail-image">
+        <img [src]="Product.imageURL" class="ekart-product-detail-image">
     </div>
     
     <div class="ekart-product-detail">
@@ -18,32 +18,32 @@
         <div class="ekart-product-detail-price">
             <p>
                 <b>Price Each Pair:</b>
-                <span style="background-color: red; color:white"><s>${{Product.price}}</s></span>
-                <span style="background-color: green; color:white">${{Product.discountPrice}}</span> (Inclusive of all taxes)
+                <span style="background-color: red; color:white"><s>{{(Product.price* 278.50) | currency : 'PKR ': true : '3.0'}}</s></span>
+                <span style="background-color: green; color:white">{{(Product.discountPrice * 278.50) | currency : 'PKR ': true : '3.0'}}</span> (Inclusive of all taxes)
             </p>
         </div>
         <div class="ekart-product-detail-size">
             <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
                 <h4>Available Size</h4>
             </div>
-            <diV style="margin-top: 20px">
+            <div style="margin-top: 20px">
                 <span class="ekart-product-detail-available-size">6</span>
                 <span class="ekart-product-detail-available-size">7</span>
                 <span class="ekart-product-detail-available-size">8</span>
                 <span class="ekart-product-detail-available-size">9</span>
-            </diV>                
+            </div>                
         </div>
 
         <div class="ekart-product-detail-color">
             <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
                 <h4>Available Color</h4>
             </div>
-            <diV style="margin-top: 20px;">
+            <div style="margin-top: 20px;">
                 <span class="ekart-product-detail-available-color" style="background-color: red;"></span>
                 <span class="ekart-product-detail-available-color" style="background-color: green;"></span>
                 <span class="ekart-product-detail-available-color" style="background-color: black;"></span>
                 <span class="ekart-product-detail-available-color" style="background-color: blue;"></span>
-            </diV>                
+            </div>                
         </div>
 
         <div class="ekart-product-detail-desc">
@@ -59,4 +59,4 @@
         <button class="btn-add-to-cart">ADD TO CART</button>
     </div>
 </div>
-<div class="overlay"></div>
+<div *ngIf="isVisible" class="overlay"></div>

@@ -23,7 +23,7 @@ const routes: Routes= [
   {path: '', component: HomeComponentComponent},
   {path: 'contact', loadChildren: ()=>import ('./contact/contact.module').then ((mod)=>mod.contactModule)} ,
 
-  {path:'home', component: HomeComponentComponent },
+  {path:'products', component: HomeComponentComponent },
   {path : 'About',component: AboutComponent},
   {path : '**', component: NotFoundComponent}
 
